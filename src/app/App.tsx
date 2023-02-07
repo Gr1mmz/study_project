@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { AppRouter } from './providers/router';
 import './styles/index.scss';
+import { Sidebar } from 'widgets/Sidebar';
 
 const App: FC = ({}) => {
   const {theme} = useTheme()
@@ -11,8 +12,10 @@ const App: FC = ({}) => {
   return (
     <div className={classNames('app', {}, [theme])}>
       <Navbar/>
-      {/* <button onClick={toggleTheme} >Theme</button> */}
-      <AppRouter/>
+      <div className='content-page'>
+        <Sidebar/>
+        <AppRouter/>
+      </div>
     </div>
   )
 };
