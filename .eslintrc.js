@@ -18,19 +18,14 @@ module.exports = {
     },
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
-    'react/jsx-filename-extension': [
-      2,
-      { extensions: ['.js', '.jsx', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['.js', '.jsx', '.tsx'],
+    }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
@@ -44,54 +39,49 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'linebreak-style': ['error', 'windows'],
     'eol-last': 'off',
-    'i18next/no-literal-string': [
-      'error',
-      {
-        markupOnly: true,
-        onlyAttribute: [''],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+      onlyAttribute: [''],
+    }],
+    'max-len': ['error', {
+      ignoreComments: true,
+    }],
+    'import/order': ['error', {
+      alphabetize: {
+        order: 'asc',
+        caseInsensitive: false,
       },
-    ],
-    'max-len': ['error', { ignoreComments: true }],
-    'import/order': [
-      'error',
-      {
-        alphabetize: {
-          order: 'asc',
-          caseInsensitive: false,
-        },
-        groups: [
-          'builtin',
-          'external',
-          'internal',
-          ['parent', 'sibling', 'index', 'object'],
-          'type',
+      groups: [
+        'builtin',
+        'external',
+        'internal',
+        [
+          'parent',
+          'sibling',
+          'index',
+          'object',
         ],
-        'newlines-between': 'always',
-        pathGroups: [
-          {
-            pattern: 'react',
-            group: 'builtin',
-          },
-          {
-            pattern: 'src/',
-            group: 'internal',
-          },
-          {
-            pattern: 'features/',
-            group: 'internal',
-          },
-          {
-            pattern: 'pages/',
-            group: 'internal',
-          },
-          {
-            pattern: 'components/',
-            group: 'internal',
-          },
-        ],
-        pathGroupsExcludedImportTypes: ['react', 'react-native', 'type'],
-      },
-    ],
+        'type',
+      ],
+      'newlines-between': 'always',
+      pathGroups: [{
+        pattern: 'react',
+        group: 'builtin',
+      }, {
+        pattern: 'src/',
+        group: 'internal',
+      }, {
+        pattern: 'features/',
+        group: 'internal',
+      }, {
+        pattern: 'pages/',
+        group: 'internal',
+      }, {
+        pattern: 'components/',
+        group: 'internal',
+      }],
+      pathGroupsExcludedImportTypes: ['react', 'react-native', 'type'],
+    }],
   },
   globals: {
     __IS_DEV__: true,
@@ -101,12 +91,10 @@ module.exports = {
       version: 'detect',
     },
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off',
-      },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
     },
-  ],
+  }],
 };
