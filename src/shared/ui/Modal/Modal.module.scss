@@ -22,6 +22,8 @@
   padding: 20px;
   border-radius: 12px;
   background: var(--bg-secondary-color);
+  color: var(--primary-color);
+  font: var(--font-m);
   transition: 0.3s transform;
   transform: scale(0.5);
   max-width: 60%;

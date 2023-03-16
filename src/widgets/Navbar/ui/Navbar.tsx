@@ -28,7 +28,7 @@ export const Navbar = ({ className }: NavbarProps) => {
         </Button>
         {/* eslint-disable-next-line i18next/no-literal-string */}
         <Modal isOpen={openAuthModal} onClose={onToggleModal}>
-          Login
+          Booba
         </Modal>
       </div>
     </div>
