@@ -1,9 +1,9 @@
 import { useCallback, useState } from 'react';
 
+import { LoginModal } from 'features/AuthByUsername';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button/ui/Button';
-import { Modal } from 'shared/ui/Modal/Modal';
 
 import cls from './Navbar.module.scss';
 
@@ -16,20 +16,21 @@ export const Navbar = ({ className }: NavbarProps) => {
 
   const { t } = useTranslation();
 
-  const onToggleModal = useCallback(() => {
-    setOpenAuthModal((prev) => !prev);
+  const onCloseModal = useCallback(() => {
+    setOpenAuthModal(false);
+  }, []);
+
+  const onOpenModal = useCallback(() => {
+    setOpenAuthModal(true);
   }, []);
 
   return (
     <div className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
-        <Button theme={ButtonTheme.CLEAR} onClick={onToggleModal}>
+        <Button theme={ButtonTheme.CLEAR} onClick={onOpenModal}>
           {t('Войти')}
         </Button>
-        {/* eslint-disable-next-line i18next/no-literal-string */}
-        <Modal isOpen={openAuthModal} onClose={onToggleModal}>
-          Booba
-        </Modal>
+        <LoginModal isOpen={openAuthModal} onClose={onCloseModal} />
       </div>
     </div>
   );

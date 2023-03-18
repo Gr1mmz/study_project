@@ -1,0 +1,23 @@
+.Input {
+  display: flex;
+  flex-direction: column;
+
+  .label {
+    font-size: var(--font-size-sm);
+    align-self: flex-start;
+  }
+
+  input {
+    padding: 8px 16px;
+    border-radius: 8px;
+    outline: none;
+    background-color: var(--inputs-bg-color);
+    color: var(--primary-color);
+    border: 1px solid transparent;
+    transition: all 0.3s;
+
+    &:focus {
+      border: 1px solid var(--inverted-primary-color);
+    }
+  }
+}
