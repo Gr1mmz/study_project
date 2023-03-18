@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/ui/Button';
-import { Input } from 'shared/ui/Input/Input';
+import { Input } from 'shared/ui/Input';
 
 import cls from './LoginForm.module.scss';
 
