@@ -2,6 +2,7 @@ import React from 'react';
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import {
   ThemeDecorator,
 } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
@@ -22,7 +23,15 @@ const Template: ComponentStory<typeof Navbar> = (
 
 export const Light = Template.bind({});
 Light.args = {};
+Light.decorators = [StoreDecorator({
+  loginForm: { username: '', password: '' },
+})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+  StoreDecorator({
+    loginForm: { username: '', password: '' },
+  }),
+  ThemeDecorator(Theme.DARK),
+];

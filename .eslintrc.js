@@ -50,6 +50,7 @@ module.exports = {
     }],
     'max-len': ['error', {
       ignoreComments: true,
+      code: 120,
     }],
     'import/order': ['error', {
       alphabetize: {
